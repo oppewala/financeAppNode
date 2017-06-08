@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TransactionList from './components/TransactionList';
+
 class App extends Component {
   constructor() {
     super();
@@ -27,6 +29,7 @@ class App extends Component {
         <ul>
           {this.renderItem("Hello")}
         </ul>
+        <TransactionList />
         <button onClick={() => this.setState({ loggedIn: true })} />
       </div>
     );
