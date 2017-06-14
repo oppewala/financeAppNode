@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TransactionListItem from './TransactionListItem';
 import TransactionAdd from './TransactionAdd';
+import moment from 'moment';
 
 export default class TransactionList extends Component {
     constructor() {
@@ -8,19 +9,19 @@ export default class TransactionList extends Component {
         this.state = {
             transactions: [{
                 transactionID: 1,
-                date: new Date(2017, 1, 1),
+                date: moment("2017-01-01", "YYYY-MM-DD"),
                 description: "Transaction Desc 1",
                 amount: 400
             },
             {
                 transactionID: 2,
-                date: new Date(2017, 2, 1),
+                date: moment("2017-02-01", "YYYY-MM-DD"),
                 description: "Tran 2",
                 amount: -50
             },
             {
                 transactionID: 3,
-                date: new Date(2017, 3, 1),
+                date: moment("2017-03-01", "YYYY-MM-DD"),
                 description: "Transact no 3",
                 amount: -350
             }],
@@ -34,7 +35,7 @@ export default class TransactionList extends Component {
     addTransaction(trans) {
         trans.transactionID = this.state.currentTransactionID + 1;
         
-        trans.date = new Date(trans.date);
+        trans.date = moment(trans.date, "YYYY-MM-DD");
 
         this.setState((prev, props) => {
             prev.transactions.push(trans);

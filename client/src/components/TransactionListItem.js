@@ -10,7 +10,7 @@ export default class TransactionListItem extends Component {
 
         return (
             <tr key={transaction.transactionID}>
-                <td>{transaction.date.toLocaleDateString()}</td>
+                <td>{transaction.date.format("L")}</td>
                 <td>{transaction.transactionID} {transaction.description}</td>
                 <td>{transaction.amount}</td>
                 <td><button onClick={this.removeTransaction.bind(this, transaction.transactionID)}>Delete</button></td>
