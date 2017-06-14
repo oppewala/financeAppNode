@@ -8,19 +8,19 @@ export default class TransactionList extends Component {
         this.state = {
             transactions: [{
                 transactionID: 1,
-                date: "2017-01-01",
+                date: new Date(2017, 1, 1),
                 description: "Transaction Desc 1",
                 amount: 400
             },
             {
                 transactionID: 2,
-                date: "2017-02-01",
+                date: new Date(2017, 2, 1),
                 description: "Tran 2",
                 amount: -50
             },
             {
                 transactionID: 3,
-                date: "2017-03-01",
+                date: new Date(2017, 3, 1),
                 description: "Transact no 3",
                 amount: -350
             }],
@@ -33,6 +33,8 @@ export default class TransactionList extends Component {
 
     addTransaction(trans) {
         trans.transactionID = this.state.currentTransactionID + 1;
+        
+        trans.date = new Date(trans.date);
 
         this.setState((prev, props) => {
             prev.transactions.push(trans);

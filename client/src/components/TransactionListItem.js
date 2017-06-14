@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 export default class TransactionListItem extends Component {
-    constructor() {
-        super();
-    }
-
     removeTransaction(transID) {
         this.props.removeTransaction(transID);
     }
@@ -14,7 +10,7 @@ export default class TransactionListItem extends Component {
 
         return (
             <tr key={transaction.transactionID}>
-                <td>{transaction.date}</td>
+                <td>{transaction.date.toLocaleDateString()}</td>
                 <td>{transaction.transactionID} {transaction.description}</td>
                 <td>{transaction.amount}</td>
                 <td><button onClick={this.removeTransaction.bind(this, transaction.transactionID)}>Delete</button></td>
