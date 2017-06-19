@@ -38,20 +38,34 @@ export default class TransactionAdd extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Description:
-                    <input name="description" type="text" value={this.state.description} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Amount:
-                    <input name="amount" type="number" value={this.state.amount} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Date:
-                    <input name="date" type="text" value={this.state.date} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Add Transaction" />
+            <form className="pb-3" onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                    <label for="transactionAddDescription">Description:</label>
+                    <input name="description" type="text" className="form-control" id="transactionAddDescription" value={this.state.description} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>
+                        Amount:
+                        <div className="input-group">
+                            <span className="input-group-addon">$</span>
+                            <input name="amount" type="number" className="form-control" value={this.state.amount} onChange={this.handleChange} />
+                        </div>
+                    </label>
+                </div>
+                <div className="form-group">
+                    <label>
+                        Date:
+                        <div className="input-group">
+                            <input name="date" type="text" className="form-control" value={this.state.date} onChange={this.handleChange} />
+                            <span className="input-group-btn">
+                                <button className="btn btn-secondary" type="button">Cal</button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+                <div className="input-group">
+                    <input className="btn btn-outline-primary" type="submit" value="Add Transaction" />
+                </div>
             </form>
         )
     }

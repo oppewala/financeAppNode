@@ -12,51 +12,35 @@ class App extends Component {
     }
   }
 
-  renderItem(val) {
-    return <Item value={val} loggedIn={this.state.loggedIn} />
-  }
-
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <header className="navbar navbar-inverse fixed-top bg-inverse">
+          <h1 className="navbar-brand">Home Page</h1>
+        </header>
+        <div className="container-fluid">
+          <div className="row">
+            <nav className="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+              <ul className="nav nav-pills flex-column">
+                <li className="nav-item">
+                  <a className="nav-link active" href="#">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Page Two</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Page Three</a>
+                </li>
+              </ul>
+            </nav>
+            <main className="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 pb-3">
+              <TransactionList />
+            </main>
+          </div>
         </div>
-        <p className="App-intro">
-          Logged in? - {this.state.loggedIn}. To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <ul>
-          {this.renderItem("Hello")}
-        </ul>
-        <TransactionList />
-        <button onClick={() => this.setState({ loggedIn: true })} />
       </div>
+      
     );
-  }
-}
-
-class Item extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: null,
-    };
-  }
-
-  flipState() {
-    console.log(this.state);
-    if (this.state.value === 'X') {
-      this.setState({ value: 'X' });
-    } else {
-      this.setState({ value: 'Y' });      
-    }
-  }
-
-  render() {
-    return (
-      <li onClick={() => this.flipState()}>{this.props.value} - {this.state.value}</li>
-    )
   }
 }
 

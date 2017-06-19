@@ -65,14 +65,20 @@ export default class TransactionList extends Component {
 
     render() {
         return (
-            <div>
-                <table>
-                    <tr>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                    </tr>
-                    {this.renderTransactions(this.state.transactions)}
+            <div className="table-responsive">
+                <h2>Transactions</h2>
+                <table className="table table-striped table-hover">
+                    <thead className="thead">
+                      <tr>
+                          <th>Date</th>
+                          <th>Description</th>
+                          <th>Amount</th>
+                          <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.renderTransactions(this.state.transactions)}
+                    </tbody>
                 </table>
                 <TransactionAdd onAddTransaction={this.addTransaction} />
             </div>
