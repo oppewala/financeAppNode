@@ -16,20 +16,20 @@ class App extends Component {
     return (
       <div className="App">
         <header className="navbar navbar-inverse fixed-top bg-inverse">
-          <h1 className="navbar-brand">Home Page</h1>
+          <h1 className="navbar-brand"><img src="./logo.svg" />Home Page</h1>
         </header>
         <div className="container-fluid">
           <div className="row">
             <nav className="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
               <ul className="nav nav-pills flex-column">
                 <li className="nav-item">
-                  <a className="nav-link active" href="#">Home</a>
+                  <a className="nav-link active" href="/123">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Page Two</a>
+                  <a className="nav-link" href="/123">Page Two</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Page Three</a>
+                  <a className="nav-link" href="/123">Page Three</a>
                 </li>
               </ul>
             </nav>
