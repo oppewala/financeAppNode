@@ -7,9 +7,12 @@ export default class TransactionAdd extends Component {
 
         var momentNow = moment()
         this.state = {
-            description: '',
-            amount: '',
-            date: momentNow.format("YYYY-MM-DD")
+            trans: {
+                description: '',
+                amount: '',
+                date: momentNow.format("YYYY-MM-DD")
+            },
+            showCard: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -43,33 +46,40 @@ export default class TransactionAdd extends Component {
 
     render() {
         return (
-            <form className="pb-3" onSubmit={this.handleSubmit}>
-                <h3>Add Transaction</h3>
-                <div className="row">
-                    <div className="form-group col-md-12">
-                        <label htmlFor="transactionAddDescription">Description:</label>
-                        <input name="description" type="text" className="form-control" id="transactionAddDescription" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="form-group col-md-5">
-                        <label htmlFor="transactionAddAmount">Amount:</label>
-                        <div className="input-group">
-                            <span className="input-group-addon">$</span>
-                            <input name="amount" type="number" className="form-control" id="transactionAddAmount" placeholder="Amount" value={this.state.amount} onChange={this.handleChange} />
+            <form className="card w-75" onSubmit={this.handleSubmit}>
+                <h3 className="card-header">Add Transaction</h3>
+                <div className="card-block">
+                    <div className="row">
+                        <div className="form-group col-md-12">
+                            <label htmlFor="transactionAddDescription">Description:</label>
+                            <input name="description" type="text" className="form-control" id="transactionAddDescription" placeholder="Description" value={this.state.trans.description} onChange={this.handleChange} />
                         </div>
                     </div>
-                    <div className="form-group col-md-4">
-                        <label htmlFor="transactionAddDate">Date:</label>
-                        <div className="input-group">
-                            <input name="date" type="text" className="form-control" id="transactionAddDate" value={this.state.date} onChange={this.handleChange} />
-                            <span className="input-group-btn">
-                                <button className="btn btn-secondary" type="button">Cal</button>
-                            </span>
+                    <div className="row">
+                        <div className="form-group col-md-5">
+                            <label htmlFor="transactionAddAmount">Amount:</label>
+                            <div className="input-group">
+                                <span className="input-group-addon">$</span>
+                                <input name="amount" type="number" className="form-control" id="transactionAddAmount" placeholder="Amount" value={this.state.trans.amount} onChange={this.handleChange} />
+                            </div>
+                        </div>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="transactionAddDate">Date:</label>
+                            <div className="input-group">
+                                <input name="date" type="text" className="form-control" id="transactionAddDate" value={this.state.trans.date} onChange={this.handleChange} />
+                                <span className="input-group-btn">
+                                    <button className="btn btn-secondary" type="button">Cal</button>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <div className="input-group col-md-3">
-                        <input className="btn btn-outline-primary btn-block" type="submit" value="Add Transaction" />
+                    <div className="row">
+                    <div className="input-group col-md-4">
+                            <input className="btn btn-outline-primary btn-block" type="submit" value="Cancel" />
+                        </div>
+                        <div className="input-group col-md-4">
+                            <input className="btn btn-outline-primary btn-block" type="submit" value="Add Transaction" />
+                        </div>
                     </div>
                 </div>
             </form>
