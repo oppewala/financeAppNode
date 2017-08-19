@@ -40,7 +40,7 @@ export default class TransactionAdd extends Component {
         return (
             <form className="pb-3" onSubmit={this.handleSubmit}>
                 <div className="form-group col-12">
-                    <label for="transactionAddDescription">Description:</label>
+                    <label htmlFor="transactionAddDescription">Description:</label>
                     <input name="description" type="text" className="form-control" id="transactionAddDescription" value={this.state.description} onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
