@@ -44,7 +44,7 @@ export default class TransactionAdd extends Component {
     render() {
         return (
             <form className="pb-3" onSubmit={this.handleSubmit}>
-                <h2>Add Transaction</h2>
+                <h3>Add Transaction</h3>
                 <div className="row">
                     <div className="form-group col-md-12">
                         <label htmlFor="transactionAddDescription">Description:</label>
@@ -69,7 +69,7 @@ export default class TransactionAdd extends Component {
                         </div>
                     </div>
                     <div className="input-group col-md-3">
-                        <input className="btn btn-outline-primary" type="submit" value="Add Transaction" />
+                        <input className="btn btn-outline-primary btn-block" type="submit" value="Add Transaction" />
                     </div>
                 </div>
             </form>

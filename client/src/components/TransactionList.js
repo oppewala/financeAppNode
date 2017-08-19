@@ -66,7 +66,7 @@ export default class TransactionList extends Component {
         return (
             <div className="table-responsive">
                 <TransactionAdd onAddTransaction={this.addTransaction} />
-                <h2>Transactions</h2>
+                <h3>Transaction Listing</h3>
                 <table className="table table-striped table-hover pb-3">
                     <thead className="thead">
                       <tr key="0">
