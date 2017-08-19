@@ -7,9 +7,10 @@ export default class TransactionListItem extends Component {
 
     render() {
         const transaction = this.props.transaction;
+        console.log(transaction);
 
         return (
-            <tr key={transaction.transactionID}>
+            <tr>
                 <td>{transaction.date.format("L")}</td>
                 <td>{transaction.transactionID} {transaction.description}</td>
                 <td className="text-right">{transaction.amount}</td>

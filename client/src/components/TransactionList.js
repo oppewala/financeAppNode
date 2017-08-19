@@ -60,7 +60,7 @@ export default class TransactionList extends Component {
     renderTransactions(transactions) {
         return transactions
             .sort((a, b) => a.date - b.date)
-            .map(transaction => <TransactionListItem removeTransaction={this.removeTransaction} transaction={transaction} />);
+            .map(transaction => <TransactionListItem key={transaction.transactionID} removeTransaction={this.removeTransaction} transaction={transaction} />);
     }
 
     render() {
@@ -69,7 +69,7 @@ export default class TransactionList extends Component {
                 <h2>Transactions</h2>
                 <table className="table table-striped table-hover">
                     <thead className="thead">
-                      <tr>
+                      <tr key="0">
                           <th>Date</th>
                           <th>Description</th>
                           <th>Amount</th>
