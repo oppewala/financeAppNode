@@ -59,7 +59,7 @@ export default class TransactionList extends Component {
 
     renderTransactions(transactions) {
         return transactions
-            .sort((a, b) => a.transactionID - b.transactionID)
+            .sort((a, b) => a.date - b.date)
             .map(transaction => <TransactionListItem removeTransaction={this.removeTransaction} transaction={transaction} />);
     };
 
