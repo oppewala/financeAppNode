@@ -44,32 +44,33 @@ export default class TransactionAdd extends Component {
     render() {
         return (
             <form className="pb-3" onSubmit={this.handleSubmit}>
-                <div className="form-group col-12">
-                    <label htmlFor="transactionAddDescription">Description:</label>
-                    <input name="description" type="text" className="form-control" id="transactionAddDescription" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
+                <h2>Add Transaction</h2>
+                <div className="row">
+                    <div className="form-group col-md-12">
+                        <label htmlFor="transactionAddDescription">Description:</label>
+                        <input name="description" type="text" className="form-control" id="transactionAddDescription" placeholder="Description" value={this.state.description} onChange={this.handleChange} />
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label>
-                        Amount:
+                <div className="row">
+                    <div className="form-group col-md-5">
+                        <label htmlFor="transactionAddAmount">Amount:</label>
                         <div className="input-group">
                             <span className="input-group-addon">$</span>
-                            <input name="amount" type="number" className="form-control" placeholder="Amount" value={this.state.amount} onChange={this.handleChange} />
+                            <input name="amount" type="number" className="form-control" id="transactionAddAmount" placeholder="Amount" value={this.state.amount} onChange={this.handleChange} />
                         </div>
-                    </label>
-                </div>
-                <div className="form-group">
-                    <label>
-                        Date:
+                    </div>
+                    <div className="form-group col-md-4">
+                        <label htmlFor="transactionAddDate">Date:</label>
                         <div className="input-group">
-                            <input name="date" type="text" className="form-control" value={this.state.date} onChange={this.handleChange} />
+                            <input name="date" type="text" className="form-control" id="transactionAddDate" value={this.state.date} onChange={this.handleChange} />
                             <span className="input-group-btn">
                                 <button className="btn btn-secondary" type="button">Cal</button>
                             </span>
                         </div>
-                    </label>
-                </div>
-                <div className="input-group">
-                    <input className="btn btn-outline-primary" type="submit" value="Add Transaction" />
+                    </div>
+                    <div className="input-group col-md-3">
+                        <input className="btn btn-outline-primary" type="submit" value="Add Transaction" />
+                    </div>
                 </div>
             </form>
         )

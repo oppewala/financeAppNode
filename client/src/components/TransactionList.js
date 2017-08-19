@@ -40,7 +40,6 @@ export default class TransactionList extends Component {
         this.setState((prev, props) => {
             prev.transactions.push(trans);
             prev.currentTransactionID = trans.transactionID;
-            console.log(prev);
             return prev;
         });
         // this.forceUpdate();
@@ -66,8 +65,9 @@ export default class TransactionList extends Component {
     render() {
         return (
             <div className="table-responsive">
+                <TransactionAdd onAddTransaction={this.addTransaction} />
                 <h2>Transactions</h2>
-                <table className="table table-striped table-hover">
+                <table className="table table-striped table-hover pb-3">
                     <thead className="thead">
                       <tr key="0">
                           <th>Date</th>
@@ -80,7 +80,6 @@ export default class TransactionList extends Component {
                       {this.renderTransactions(this.state.transactions)}
                     </tbody>
                 </table>
-                <TransactionAdd onAddTransaction={this.addTransaction} />
             </div>
         )
     }

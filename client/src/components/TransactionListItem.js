@@ -7,7 +7,6 @@ export default class TransactionListItem extends Component {
 
     render() {
         const transaction = this.props.transaction;
-        console.log(transaction);
 
         return (
             <tr>
