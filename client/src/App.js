@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
 import TransactionList from './components/TransactionList';
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="navbar navbar-inverse fixed-top bg-inverse">
-          <h1 className="navbar-brand"><img src="./logo.svg" alt="logo" />Home Page</h1>
+          <h1 className="navbar-brand"><img src={logo} alt="logo" height="30px" width="30px" />Home Page</h1>
         </header>
         <div className="container-fluid">
           <div className="row">
