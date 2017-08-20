@@ -64,22 +64,38 @@ export default class TransactionList extends Component {
 
     render() {
         return (
-            <div className="table-responsive">
+            <div className="card">
+                <div className="card-header">
+                    <h4>Transaction Listing</h4>
+                </div>
                 <TransactionAdd onAddTransaction={this.addTransaction} />
-                <h3>Transaction Listing</h3>
-                <table className="table table-striped table-hover pb-3">
-                    <thead className="thead">
-                      <tr key="0">
-                          <th>Date</th>
-                          <th>Description</th>
-                          <th>Amount</th>
-                          <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.renderTransactions(this.state.transactions)}
-                    </tbody>
-                </table>
+                <div className="card-body">
+                    <table className="table table-striped table-hover mb-0">
+                        <thead className="thead">
+                        <tr key="0">
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th className="text-right">Amount</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.renderTransactions(this.state.transactions)}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="card-footer">
+                    <div className="row">
+                        <div className="col-3">
+                            <button type="button" className="btn btn-secondary btn-sm mr-1 disabled">Prev</button>
+                            <button type="button" className="btn btn-secondary btn-sm mr-1 disabled">Next</button>
+                            <span>Showing 1-{this.state.transactions.length} of {this.state.transactions.length}</span>
+                        </div>
+                        <div className="col-9">
+                            <button type="button" className="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#addTransactionModal">Add Transaction(s)</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
