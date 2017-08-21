@@ -72,12 +72,12 @@ export default class TransactionList extends Component {
                 <div className="card-body">
                     <table className="table table-striped table-hover mb-0">
                         <thead className="thead">
-                        <tr key="0">
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th className="text-right">Amount</th>
-                            <th></th>
-                        </tr>
+                            <tr key="0">
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th className="text-right">Amount</th>
+                                <th></th>
+                            </tr>
                         </thead>
                         <tbody>
                         {this.renderTransactions(this.state.transactions)}
